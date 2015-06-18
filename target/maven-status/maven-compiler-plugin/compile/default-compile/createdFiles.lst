@@ -1,9 +1,0 @@
-org/apache/phoenix/hive/PhoenixSerde.class
-org/apache/phoenix/hive/util/PhoenixHiveConfiguration$PhoenixHiveConfigurationUtil.class
-org/apache/phoenix/hive/util/PhoenixHiveConfiguration.class
-org/apache/phoenix/hive/util/HiveConfigurationUtil$1.class
-org/apache/phoenix/hive/util/HiveTypeUtil$1.class
-org/apache/phoenix/hive/util/HiveTypeUtil.class
-org/apache/phoenix/hive/PhoenixSerde$1.class
-org/apache/phoenix/hive/PhoenixHiveDBWritable.class
-org/apache/phoenix/hive/util/HiveConstants.class
