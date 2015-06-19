@@ -38,7 +38,7 @@ import org.apache.phoenix.hive.util.HiveConnectionUtil;
 import org.apache.phoenix.hive.util.HiveConfigurationUtil;
 import org.apache.phoenix.hive.util.HiveTypeUtil;
 import org.apache.phoenix.hive.util.PhoenixUtil;
-import org.apache.phoenix.schema.PDataType;
+import org.apache.phoenix.schema.types.PDataType;
 
 /**
 * PhoenixMetaHook

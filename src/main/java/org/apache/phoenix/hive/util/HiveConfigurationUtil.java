@@ -26,7 +26,7 @@ import org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector;
 import org.apache.hadoop.hive.serde2.typeinfo.TypeInfo;
 import org.apache.phoenix.jdbc.PhoenixConnection;
 import org.apache.phoenix.mapreduce.util.PhoenixConfigurationUtil;
-import org.apache.phoenix.schema.PDataType;
+import org.apache.phoenix.schema.types.*;
 import org.apache.phoenix.util.PhoenixRuntime;
 
 import com.google.common.base.Preconditions;
@@ -128,27 +128,27 @@ public class HiveConfigurationUtil {
     public static PDataType hiveTypeToPDataType(String hiveType) throws SerDeException {
         final String lctype = hiveType.toLowerCase();
         if ("string".equals(lctype)) {
-            return PDataType.VARCHAR;
+            return PVarchar.INSTANCE;
         } else if ("float".equals(lctype)) {
-            return PDataType.FLOAT;
+            return PFloat.INSTANCE;
         } else if ("double".equals(lctype)) {
-            return PDataType.DOUBLE;
+            return PDouble.INSTANCE;
         } else if ("boolean".equals(lctype)) {
-            return PDataType.BOOLEAN;
+            return PBoolean.INSTANCE;
         } else if ("tinyint".equals(lctype)) {
-            return PDataType.SMALLINT;
+            return PSmallint.INSTANCE;
         } else if ("smallint".equals(lctype)) {
-            return PDataType.SMALLINT;
+            return PSmallint.INSTANCE;
         } else if ("int".equals(lctype)) {
-            return PDataType.INTEGER;
+            return PInteger.INSTANCE;
         } else if ("bigint".equals(lctype)) {
-            return PDataType.DOUBLE;
+            return PDouble.INSTANCE;
         } else if ("timestamp".equals(lctype)) {
-            return PDataType.TIMESTAMP;
+            return PTimestamp.INSTANCE;
         } else if ("binary".equals(lctype)) {
-            return PDataType.BINARY;
+            return PBinary.INSTANCE;
         } else if ("date".equals(lctype)) {
-            return PDataType.DATE;
+            return PDate.INSTANCE;
         } else if ("array".equals(lctype)) {
             // return PArrayDataType
         }
@@ -171,31 +171,31 @@ public class HiveConfigurationUtil {
         }
         switch (hiveType) {
         case BOOLEAN:
-            return PDataType.BOOLEAN;
+            return PBoolean.INSTANCE;
         case BYTE:
-            return PDataType.BINARY;
+            return PBinary.INSTANCE;
         case DATE:
-            return PDataType.DATE;
+            return PDate.INSTANCE;
         case DECIMAL:
-            return PDataType.DECIMAL;
+            return PDecimal.INSTANCE;
         case DOUBLE:
-            return PDataType.DOUBLE;
+            return PDouble.INSTANCE;
         case FLOAT:
-            return PDataType.FLOAT;
+            return PFloat.INSTANCE;
         case INT:
-            return PDataType.INTEGER;
+            return PInteger.INSTANCE;
         case LONG:
-            return PDataType.LONG;
+            return PLong.INSTANCE;
         case SHORT:
-            return PDataType.SMALLINT;
+            return PSmallint.INSTANCE;
         case STRING:
-            return PDataType.VARCHAR;
+            return PVarchar.INSTANCE;
         case TIMESTAMP:
-            return PDataType.TIMESTAMP;
+            return PTimestamp.INSTANCE;
         case VARCHAR:
-            return PDataType.VARCHAR;
+            return PVarchar.INSTANCE;
         case VOID:
-            return PDataType.CHAR;
+            return PChar.INSTANCE;
         case UNKNOWN:
             throw new RuntimeException("Unknown primitive");
         default:

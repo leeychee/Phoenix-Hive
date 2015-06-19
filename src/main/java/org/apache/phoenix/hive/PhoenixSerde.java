@@ -38,7 +38,7 @@ import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.mapred.lib.db.DBWritable;
 import org.apache.phoenix.hive.util.HiveConstants;
 import org.apache.phoenix.hive.util.HiveTypeUtil;
-import org.apache.phoenix.schema.PDataType;
+import org.apache.phoenix.schema.types.PDataType;
 
 public class PhoenixSerde implements SerDe {
     static Log LOG = LogFactory.getLog(PhoenixSerde.class.getName());

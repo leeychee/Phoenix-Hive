@@ -33,7 +33,7 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.Writable;
-import org.apache.phoenix.schema.PDataType;
+import org.apache.phoenix.schema.types.*;
 
 public class HiveTypeUtil {
     private static final Log LOG = LogFactory.getLog(HiveTypeUtil.class);
@@ -81,29 +81,29 @@ public class HiveTypeUtil {
     public static PDataType HiveType2PDataType(String hiveType) throws SerDeException {
         final String lctype = hiveType.toLowerCase();
         if ("string".equals(lctype)) {
-            return PDataType.VARCHAR;
+            return PVarchar.INSTANCE;
         } else if ("varchar".equals(lctype)) {
-            return PDataType.VARCHAR;
+            return PVarchar.INSTANCE;
         } else if ("float".equals(lctype)) {
-            return PDataType.FLOAT;
+            return PFloat.INSTANCE;
         } else if ("double".equals(lctype)) {
-            return PDataType.DOUBLE;
+            return PDouble.INSTANCE;
         } else if ("boolean".equals(lctype)) {
-            return PDataType.BOOLEAN;
+            return PBoolean.INSTANCE;
         } else if ("tinyint".equals(lctype)) {
-            return PDataType.SMALLINT;
+            return PSmallint.INSTANCE;
         } else if ("smallint".equals(lctype)) {
-            return PDataType.SMALLINT;
+            return PSmallint.INSTANCE;
         } else if ("int".equals(lctype)) {
-            return PDataType.INTEGER;
+            return PInteger.INSTANCE;
         } else if ("bigint".equals(lctype)) {
-            return PDataType.DOUBLE;
+            return PDouble.INSTANCE;
         } else if ("timestamp".equals(lctype)) {
-            return PDataType.TIMESTAMP;
+            return PTimestamp.INSTANCE;
         } else if ("binary".equals(lctype)) {
-            return PDataType.BINARY;
+            return PBinary.INSTANCE;
         } else if ("date".equals(lctype)) {
-            return PDataType.DATE;
+            return PDate.INSTANCE;
         } else if ("array".equals(lctype)) {
             // return PArrayDataType
         }

@@ -255,7 +255,7 @@ public final class PhoenixConfigurationUtil {
         Preconditions.checkNotNull(tableName);
         final List<ColumnInfo> columnMetadataList = getSelectColumnMetadataList(configuration);
         final String conditions = configuration.get(INPUT_TABLE_CONDITIONS);
-        selectStmt = QueryUtil.constructSelectStatement(tableName, columnMetadataList);
+        selectStmt = QueryUtil.constructSelectStatement(tableName, columnMetadataList, conditions);
         //selectStmt = QueryUtil.constructSelectStatement(tableName, columnMetadataList, conditions);
         LOG.info("Select Statement: "+ selectStmt);
         configuration.set(SELECT_STATEMENT, selectStmt);
