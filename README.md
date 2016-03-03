@@ -14,10 +14,11 @@ In an ETL workflow id often makes a lot of sense to clean and specialize your da
 ### Usage
 ============
 
-#### [Apache Hive - 13 and Above/ Apache Phoenix 4.2 and above]
+#### [CDH 5.4.9 / Apache Phoenix 4.6]
 
-Add phoenix-hive-<version>.jar to `hive.aux.jars.path` or register it manually in your Hive script (recommended):
+Add phoenix-hive-<version>.jar and phoenix-core-<version>.jar to `hive.aux.jars.path` or register it manually in your Hive script (recommended):
 ```
+ADD JAR /path_to_jar/phoenix-core-<version>.jar;
 ADD JAR /path_to_jar/phoenix-hive-<version>.jar;
 ```
 #### Writing Example
@@ -106,5 +107,8 @@ select pt.id,s.code,pt.salary,s.salary from phoenix_table pt,phoenix_sample ps s
 ```
 ### Compile
 ============
+
+You *should* compile [phoenix-for-cloudera](https://github.com/chiastic-security/phoenix-for-cloudera) first.
+
 To compile the project 
 mvn package -Dhadoop.profile=2 

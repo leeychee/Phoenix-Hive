@@ -99,7 +99,7 @@ public class HivePhoenixRecordReader<T extends DBWritable> extends PhoenixRecord
         try {
             TableResultIterator tableResultIterator =
                     new TableResultIterator(this.queryPlan.getContext(),
-                            this.queryPlan.getTableRef(), scan);
+                            this.queryPlan.getTableRef(), scan, null);
             if (this.queryPlan.getContext().getSequenceManager().getSequenceCount() > 0) this.resultIterator =
                     new SequenceResultIterator(tableResultIterator, this.queryPlan.getContext()
                             .getSequenceManager());
@@ -108,7 +108,7 @@ public class HivePhoenixRecordReader<T extends DBWritable> extends PhoenixRecord
             }
             this.resultSet =
                     new PhoenixResultSet(this.resultIterator, this.queryPlan.getProjector(),
-                            this.queryPlan.getContext().getStatement());
+                            this.queryPlan.getContext());
         } catch (SQLException e) {
             LOG.error(String.format(" Error [%s] initializing PhoenixRecordReader. ",
                 new Object[] { e.getMessage() }));

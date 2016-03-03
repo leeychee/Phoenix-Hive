@@ -49,11 +49,13 @@ public class HivePhoenixInputSplit extends FileSplit {
     }
 
     public HivePhoenixInputSplit(KeyRange keyRange) {
+        super((Path) null, 0, 0, (String[]) null);
         Preconditions.checkNotNull(keyRange);
         this.keyRange = keyRange;
     }
 
     public HivePhoenixInputSplit(KeyRange keyRange, Path path) {
+        super((Path) null, 0, 0, (String[]) null);
         Preconditions.checkNotNull(keyRange);
         Preconditions.checkNotNull(path);
         LOG.debug("path: " + path);
